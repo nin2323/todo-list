@@ -6,6 +6,7 @@ interface Task {
   isCompleted: boolean;
   id: number
 }
+
 function App() {
   const [taskText, setTaskText] = useState('')
   const [tasks, setTasks] = useState<Task []>([])
