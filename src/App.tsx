@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import { TaskInput } from './taskInput';
+import { TaskList } from './TaskList';
 
 interface Task {
   text: string;
@@ -17,7 +19,7 @@ function App() {
   }
 
   const handleInput = (event: any) => {
-    setTaskText(event.target.value)
+    setTaskText(event.target.value);
   }
 
   const deleteTask = (taskId: number) => {
@@ -30,29 +32,15 @@ function App() {
     ));
   };
 
-  console.log(tasks)
-   
+  
   return (
     <>
-    <div className='add-task'>
-      <input type="text" onInput={handleInput} value={taskText}/>
-      <button className='button' onClick={handleAddTask}>Añadir tarea</button>
-    </div>
-    <div className='task-list'>
-      {tasks.map((task) => {
-        return (
-          <div className='task' key={task.id}>
-            <div>
-              <input onChange={() => completeTask(task.id) } type="checkbox" checked={task.isCompleted} />
-              <span className={task.isCompleted ? 'completed' : ''}>{task.text}</span>
-            </div>
-            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
-          </div>
-        )
-      })}     
-    </div>
+    <>
+      <TaskInput taskText={taskText} onInputChange={handleInput} onAddTask={handleAddTask} />
+      <TaskList tasks={tasks} onCompleteTask={completeTask} onDeleteTask={deleteTask} />
     </>
-  )
+    </>
+  );
 }
 
 export default App
