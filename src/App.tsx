@@ -35,10 +35,8 @@ function App() {
   
   return (
     <>
-    <>
       <TaskInput taskText={taskText} onInputChange={handleInput} onAddTask={handleAddTask} />
       <TaskList tasks={tasks} onCompleteTask={completeTask} onDeleteTask={deleteTask} />
-    </>
     </>
   );
 }

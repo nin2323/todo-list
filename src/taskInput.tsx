@@ -1,7 +1,7 @@
 interface TaskInputPops {
     taskText: string;
     onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onAddTask: any
+    onAddTask: any;
 }
 
 export const TaskInput = (props: TaskInputPops) => {
