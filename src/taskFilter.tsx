@@ -11,15 +11,14 @@ interface TaskFilterProps {
   
     return (
       <div className='button-filter'>
-        <button className="button" onClick={() => handleFilterChange('all')}>
-          Mostrar todas
-        </button>
-        
         <button className="button" onClick={() => handleFilterChange('completed')}>
           Filtrar completadas
         </button>
         <button className="button" onClick={() => handleFilterChange('pending')}>
           Filtrar pendientes
+        </button>
+        <button className="button" onClick={() => handleFilterChange('all')}>
+          Mostrar todas
         </button>
       </div>
     );
