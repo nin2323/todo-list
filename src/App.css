@@ -54,19 +54,18 @@
 .unicorn {
   position: fixed;
   top: 50%;
-  left: -200px; 
+  left: -200px;  /* Comienza fuera de la pantalla */
   transform: translateY(-50%);
-  animation: moveUnicorn 3s forwards; 
-  z-index: 9999; 
+  animation: moveUnicorn 3s forwards;
+  z-index: 9999;
 }
 
 @keyframes moveUnicorn {
   0% {
-    left: -200px; /* Comienza fuera de la pantalla */
-  }
+    left: -200px; /* Comienza fuera de la pantalla a la izquierda */  }
   50% {
-    left: 50%; /* Se mueve al centro de la pantalla */
-    transform: translate(-50%, -50%); /* Centrado perfecto */
+    left: 50%; /* Mueve al centro de la pantalla */
+    transform: translateX(-50%) translateY(-50%) rotate(360deg) ; /* Gira solo cuando llega al centro */
   }
   100% {
     left: 100vw; /* Sale de la pantalla por el lado derecho */
