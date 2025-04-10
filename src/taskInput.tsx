@@ -11,7 +11,7 @@ export const TaskInput = (props: TaskInputPops) => {
     return (
       <div className="add-task">
         <input type="text" onInput={onInputChange} value={taskText} />
-        <button className="button" onClick={onAddTask} >Añadir tarea</button>
+        <button className="button" onClick={onAddTask} disabled={!taskText.trim().length}>Añadir tarea</button>
       </div>
     );
 };

@@ -46,3 +46,29 @@
   text-decoration: line-through;
   color: gray;
 }
+
+.button-filter {
+  margin-bottom: 24px;
+}
+
+.unicorn {
+  position: fixed;
+  top: 50%;
+  left: -200px; 
+  transform: translateY(-50%);
+  animation: moveUnicorn 3s forwards; 
+  z-index: 9999; 
+}
+
+@keyframes moveUnicorn {
+  0% {
+    left: -200px; /* Comienza fuera de la pantalla */
+  }
+  50% {
+    left: 50%; /* Se mueve al centro de la pantalla */
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+  }
+  100% {
+    left: 100vw; /* Sale de la pantalla por el lado derecho */
+  }
+}
